@@ -1,0 +1,29 @@
+﻿<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Add user</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <p>
+    You can add a new user :
+  </p>
+  <ion-list>
+
+    <ion-item>
+      <ion-input type="text" placeholder="Firstname" [(ngModel)]="user.firstname"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="text" placeholder="Lastname" [(ngModel)]="user.lastname"></ion-input>
+  </ion-item>
+
+  </ion-list>
+
+  <div padding>
+    <button ion-button center (click)="addUser();">Add user</button>
+  </div>
+</ion-content>

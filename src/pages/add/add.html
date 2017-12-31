@@ -1,0 +1,55 @@
+﻿<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Add task</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <p>
+    You can add a new task to your todo list :
+  </p>
+  <ion-list>
+
+    <ion-item>
+      <ion-input type="text" placeholder="My task" [(ngModel)]="task.title"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-textarea placeholder="Description of my task" [(ngModel)]="task.description"></ion-textarea>
+  </ion-item>
+
+    <ion-item>
+      <ion-label>Date</ion-label>
+      <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="task.date"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Time</ion-label>
+      <ion-datetime displayFormat="h:mm A" pickerFormat="d h mm A" [(ngModel)]="task.time"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>User</ion-label>
+      <ion-select [(ngModel)]="task.userId">
+          <ion-option *ngFor="let user of users" value="{{ user.id }}">{{ user.firstname }} {{ user.lastname }}</ion-option>        
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Priority</ion-label>
+      <ion-select [(ngModel)]="task.priority">
+        <ion-option value="1">High</ion-option>
+        <ion-option value="2">Medium</ion-option>
+        <ion-option value="3">Low</ion-option>
+      </ion-select>
+    </ion-item>
+
+  </ion-list>
+
+  <div padding>
+    <button ion-button center (click)="addTask();">Add task</button>
+  </div>
+</ion-content>

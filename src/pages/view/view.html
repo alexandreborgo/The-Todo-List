@@ -1,0 +1,23 @@
+﻿<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ task.title }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <p><strong>Title : </strong>{{ task.title }}</p>
+  <p><strong>Description : </strong>{{ task.description }}</p>
+  <p><strong>Assign to : </strong>{{ user }}</p>
+  <p><strong>Priority : </strong>
+    <span style="color:red;" *ngIf=" task.priority == '1'"> High  </span>
+    <span style="color:blue;" *ngIf=" task.priority == '2'"> Medium  </span>
+    <span style="color:green;" *ngIf=" task.priority == '3'"> Low  </span>
+  </p>
+  <p><strong>Date : </strong>{{ task.date }}</p>
+  <p><strong>Time : </strong>{{ task.time }}</p>
+  <button ion-button (click)="edit();">Edit</button>
+  <button ion-button color="danger" (click)="delete();">Remove</button>
+</ion-content>

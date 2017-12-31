@@ -1,0 +1,17 @@
+﻿<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Todo List</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <button ion-item *ngFor="let task of tasks" (click)="itemView(task)">
+      <strong>{{ task.title }}</strong> :
+        {{ task.description }}
+    </button>
+  </ion-list>
+</ion-content>
